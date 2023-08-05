@@ -26,13 +26,9 @@ const getQuotes = async () => {
   const page = await browser.newPage();
   await preparePageForTests(page);
 
-  await page.goto("https://dotgg.gg/nikke/characters", {
-    waitUntil: "domcontentloaded",
-  });
-    await page.locator(`.class`).all();
-    await page.locator(`#id`).all();
-
-
+    await page.goto("https://dotgg.gg/nikke/characters", {
+        waitUntil: "domcontentloaded",
+    });
 
     const imgLinks = await page.evaluate(() => {
     const gridItems = document.querySelectorAll("li.gridList_gridItem__SUIGe");
